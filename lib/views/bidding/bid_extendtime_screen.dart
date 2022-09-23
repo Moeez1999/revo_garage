@@ -1,3 +1,5 @@
+import 'package:revogarage/widgets/common_dropdown.dart';
+
 import '../../utils/app_libraries.dart';
 
 class BidExtendAuctionTimeScreen extends StatelessWidget {
@@ -162,23 +164,28 @@ class BidExtendAuctionTimeScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       color: AppColors.blackColor,
                     ),
-                    Container(
-                      height: 40,
-                      width: Get.width,
-                      decoration: BoxDecoration(
-                          color: AppColors.whiteColor,
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(20)),
-                          border: Border.all(color: AppColors.buttonColor)),
-                      child: const Center(
-                        child: MyText(
-                          AppTexts.extend,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.buttonColor,
+                    InkWell(
+                      onTap: () {
+                        showMyDialog(context, _);
+                      },
+                      child: Container(
+                        height: 40,
+                        width: Get.width,
+                        decoration: BoxDecoration(
+                            color: AppColors.whiteColor,
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
+                            border: Border.all(color: AppColors.buttonColor)),
+                        child: const Center(
+                          child: MyText(
+                            AppTexts.extend,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.buttonColor,
+                          ),
                         ),
-                      ),
-                    ).marginAll(10)
+                      ).marginAll(10),
+                    )
                   ],
                 ),
               ).marginOnly(left: 16, right: 16, bottom: 16),
@@ -241,5 +248,124 @@ class BidExtendAuctionTimeScreen extends StatelessWidget {
             color: AppColors.textColor)
       ],
     ).marginSymmetric(vertical: 12, horizontal: 10);
+  }
+
+  Future<void> showMyDialog(context, ExtendAuctionTimeController _) async {
+    return showMaterialModalBottomSheet(
+      backgroundColor: AppColors.whiteColor,
+      context: context,
+      builder: (context) => SingleChildScrollView(
+        controller: ModalScrollController.of(context),
+        child: SizedBox(
+          height: Get.height / 1.7,
+          child: Column(
+            children: [
+              Align(
+                alignment: Alignment.topRight,
+                child: InkWell(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: Container(
+                    height: 30,
+                    width: 30,
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle, color: AppColors.buttonColor),
+                    child: const Icon(
+                      Icons.close,
+                      color: AppColors.whiteColor,
+                    ),
+                  ),
+                ),
+              ),
+              const MyText(
+                AppTexts.extendTime,
+                color: AppColors.buttonColor,
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+              ).marginOnly(top: 52, bottom: 16),
+              const MyText(
+                AppTexts.extendMessage,
+                color: AppColors.blackColor,
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+                textAlign: TextAlign.center,
+              ).marginOnly(bottom: 43),
+              // << ------------------- Select days and time widget ---------------------- >>
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const MyText(
+                        "Days",
+                        color: AppColors.textfieldLabelColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        textAlign: TextAlign.center,
+                      ).marginOnly(bottom: 8, left: 15),
+                      SizedBox(
+                        width: Get.width / 2.5,
+                        height: 50,
+                        child: CommonDropDownField(
+                          hinttext: "Day",
+                          bordercolor: AppColors.textfieldColor,
+                          controller: _.days,
+                          placeholder: "Select Days",
+                          values: _.dropDownList,
+                          checkedvalue: _.days,
+                          screenController: _,
+                          fillcolor: AppColors.transparentColor,
+                        ),
+                      ).marginOnly(left: 10.0)
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const MyText(
+                        "Minutes",
+                        color: AppColors.textfieldLabelColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        textAlign: TextAlign.center,
+                      ).marginOnly(bottom: 8, left: 15),
+                      SizedBox(
+                        width: Get.width / 2.5,
+                        height: 50,
+                        child: CommonDropDownField(
+                          hinttext: "Minutes",
+                          bordercolor: AppColors.textfieldColor,
+                          controller: _.minutes,
+                          placeholder: "Select Minutes",
+                          values: _.minutesList,
+                          checkedvalue: _.minutes,
+                          screenController: _,
+                          fillcolor: AppColors.transparentColor,
+                        ),
+                      ).marginOnly(
+                        left: 10.0,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const Spacer(),
+              // << ------------------ Button -------------------  >>
+              CircularButtons(
+                      text: "Extend Auction Time",
+                      onPressed: () {},
+                      color: AppColors.buttonColor,
+                      height: 40,
+                      width: Get.width)
+                  .marginSymmetric(
+                horizontal: 17,
+              )
+            ],
+          ).marginOnly(top: 16, left: 16, right: 16, bottom: 30),
+        ),
+      ),
+    );
   }
 }

@@ -41,13 +41,18 @@ class AppTexts {
 
   static const String total = "Total";
 
-  // < --------------------- Main Page Strings -------------- >
+  static const String extendTime = "Extend Auction Time";
 
-  static const String hotCryptoNews = "Hot Crypto\nNews Of\nThe Week!";
+  static const String extendMessage =
+      "Time can be set max to 5 days.\n Minute can be set to 1 day";
 
-  // < --------------------- Analysis Page Strings -------------- >
+  // < --------------------- Complete Screen Strings -------------- >
 
-  static const String todaysAnalysis = "Today’s Analysis ";
+  static const String completeMessage = "You have successfully \n sold your car";
+
+  // < --------------------- Filter Screen Strings -------------- >
+
+   static const String vechiclesData = "Vechicles Data";
 
   // < --------------------- Scaling Strings -------------- >
 
