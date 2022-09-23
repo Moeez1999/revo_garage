@@ -2,10 +2,11 @@
 
 
 import 'package:revogarage/utils/app_libraries.dart';
+import 'package:revogarage/views/bidding/bid_allvehicle_longscreen.dart';
 import 'package:revogarage/views/bidding/bid_extendtime_screen.dart';
 
 class AppPages {
-  static const initial = Routes.extendAuctionTimeRoutes;
+  static const initial = Routes.currentAuctionLongScreen;
   // static const initial1 = Routes.dashBoardRoute;
 
   static final routes = [
@@ -37,6 +38,13 @@ class AppPages {
       name: Routes.extendAuctionTimeRoutes,
       page: () => const BidExtendAuctionTimeScreen(),
     ),
+//--------------------------------Long Vehicle page------------
+
+    GetPage(
+      name: Routes.currentAuctionLongScreen,
+      page: () => const AllVehicleBidLongScreen(),
+    ),
+
 
    
   ];

@@ -6,4 +6,6 @@ abstract class Routes {
   static const biddingAllVechiclesOneRoutes = '/BiddingAllVechiclesOne';
 
   static const extendAuctionTimeRoutes = '/ExtendAuctionTime';
+    static const currentAuctionLongScreen = '/currentAuction';
+
 }
