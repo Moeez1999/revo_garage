@@ -15,6 +15,7 @@ class CommonTextFormField extends StatefulWidget {
   final void Function()? onTap;
   final void Function(String)? onFieldSubmitted;
   final bool readOnly;
+  final Widget? suffixIcon;
   const CommonTextFormField(
       {this.controller,
       this.hintText,
@@ -26,6 +27,7 @@ class CommonTextFormField extends StatefulWidget {
       this.onChanged,
       this.onTap,
       this.readOnly = false,
+      this.suffixIcon,
       this.onFieldSubmitted});
 
   @override
@@ -49,6 +51,7 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
       controller: widget.controller,
       onFieldSubmitted: widget.onFieldSubmitted,
       decoration: InputDecoration(
+        
         // ignore: deprecated_member_use
         prefixIcon: InkWell(
           onTap: widget.onPressed,

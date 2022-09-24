@@ -27,15 +27,15 @@ class AppColors {
 
   static const dividerColor = Color(0xffDCE0DF);
 
-  static const ratingColor = Color(0xffD9D9D9);
+  static const textfieldLabelColor = Color(0xff9B9B9B);
 
-  static const greenColor = Color(0xff33DB76);
+  static const buttonTextColor = Color(0xffF7F7F7);
 
-  static const redColor = Color(0xffCA142F);
+  static const tabBarColor = Color(0xff828282);
 
   static const hintTextColor = Color(0xffF6F6F6);
 
-  static const progressBarColor = Color(0xff2E43B6);
+  static const chipColor = Color(0xffD9D9D9);
 
   static const progressBarTextColor = Color(0xff00248C);
 
@@ -44,6 +44,4 @@ class AppColors {
   static List<Color> appGradients = [
     commonColor,
   ];
-
-  
 }

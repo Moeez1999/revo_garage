@@ -1,5 +1,4 @@
 import 'package:revogarage/utils/app_libraries.dart';
-import 'package:revogarage/widgets/common_button.dart';
 
 class BidAllVechiclesScreenOne extends StatelessWidget {
   const BidAllVechiclesScreenOne({Key? key}) : super(key: key);
@@ -47,7 +46,7 @@ class BidAllVechiclesScreenOne extends StatelessWidget {
                         ),
                         const Spacer(),
                         Container(
-                          height: 5,
+                          height: 3,
                           width: Get.width / 2.0,
                           color: AppColors.buttonColor,
                         )
@@ -61,8 +60,8 @@ class BidAllVechiclesScreenOne extends StatelessWidget {
                         const MyText(
                           AppTexts.myAuction,
                           fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.textColor,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.tabBarColor,
                         ),
                         const Spacer(),
                         Container(

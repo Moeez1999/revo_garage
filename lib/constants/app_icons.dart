@@ -26,4 +26,10 @@ class AppIcons {
     color: AppColors.buttonColor,
     size: 20,
   );
+
+  static const Icon circleCheck = Icon(
+    FontAwesomeIcons.circleCheck,
+    color: AppColors.buttonColor,
+    size: 200,
+  );
 }
