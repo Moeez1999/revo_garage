@@ -1,3 +1,5 @@
+import 'package:revogarage/constants/text_style.dart';
+
 import '../utils/app_libraries.dart';
 
 class CommonRow extends StatelessWidget {
@@ -18,9 +20,17 @@ class CommonRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text("$heading"),
+        Text(
+          "$heading",
+          style: Style.Style4,
+        ),
         const Spacer(),
-        isWidget ? isRadioBtn! : Text("$subheading"),
+        isWidget
+            ? isRadioBtn!
+            : Text(
+                "$subheading",
+                style: Style.Style5,
+              ),
       ],
     );
   }

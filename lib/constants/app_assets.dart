@@ -20,9 +20,8 @@ class AppImage {
   static const String kms = "$imageDir/kms.png";
 
   static const String clock = "$imageDir/clock.png";
-    static const String elipse = "$imageDir/elipse.png";
-        static const String vehicleInfo = "$imageDir/vehicle_info.png";
-
-
-
+  static const String elipse = "$imageDir/elipse.png";
+  static const String vehicleInfo = "$imageDir/vehicle_info.png";
+  static const String carBody = "$imageDir/car_body.png";
+  static const String carInspection = "$imageDir/car_inspection.png";
 }
